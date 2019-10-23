@@ -42,8 +42,6 @@ class SecondViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
     }
-
-
 }
 
 extension SecondViewController: UITextFieldDelegate {
