@@ -23,9 +23,10 @@ class FirstViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
 
         updateTabBarLabel()
+    }
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    override func viewWillLayoutSubviews() {
+        updateTabBarLabel()
     }
 
     private func updateTabBarLabel() {
@@ -34,6 +35,15 @@ class FirstViewController: UIViewController {
             return
         }
         tabBarMeasurementLabel.text = "The TabBar's Frame is \n{ x: \(tabBarFrame.minX), y: \(tabBarFrame.minY) } \n{ width: \(tabBarFrame.width), height: \(tabBarFrame.height) } "
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

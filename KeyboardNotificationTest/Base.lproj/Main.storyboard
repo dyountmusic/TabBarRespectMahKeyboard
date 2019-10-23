@@ -34,7 +34,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My TabBar's Frame is (x: 0, y: 0, width: 865, height: 69)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTh-v5-Z0X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My TabBar's Frame is (x: 0, y: 0, width: 865, height: 69)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTh-v5-Z0X">
                                 <rect key="frame" x="287" y="629" width="450" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="450" id="EvZ-jJ-vYh"/>
@@ -100,21 +100,60 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5VO-36-ejw">
+                                <rect key="frame" x="387" y="741.5" width="250" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="KNR-kP-wBK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My TabBar's Frame is (x: 0, y: 0, width: 865, height: 69)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmD-G2-7xc">
+                                <rect key="frame" x="287" y="629" width="450" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="8UI-2d-R8P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstItem="5VO-36-ejw" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="PN7-3a-CX9"/>
+                            <constraint firstItem="BmD-G2-7xc" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="24" id="TBO-IL-Mfx"/>
+                            <constraint firstItem="5VO-36-ejw" firstAttribute="top" secondItem="NDk-cv-Gan" secondAttribute="bottom" constant="12" id="dgL-Ao-OST"/>
+                            <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="BmD-G2-7xc" secondAttribute="bottom" constant="12" id="li8-Y8-kFS"/>
+                            <constraint firstItem="BmD-G2-7xc" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="nQG-x9-JPb"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="BmD-G2-7xc" secondAttribute="trailing" constant="24" id="nVG-07-abt"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nVG-07-abt"/>
+                                <exclude reference="TBO-IL-Mfx"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="nVG-07-abt"/>
+                                <include reference="TBO-IL-Mfx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second (Using UserInfo)" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="frameLabel" destination="BmD-G2-7xc" id="EKp-JA-uax"/>
+                        <outlet property="textField" destination="5VO-36-ejw" id="AcT-dk-DtE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="750" y="359.73645680819908"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
